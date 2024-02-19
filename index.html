@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <title>Khatm</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri">
+        <link rel="icon" href="images/icon.png" type="image/x-icon"/>
+        <link rel="stylesheet" href="style.css">
+        <script>
+
+            function calc(){
+                var input = document.getElementById("number-of-khatmas");
+                if((input.value<1) || (input.value>10)) input.value = 1;
+
+                var dayPart = input.value;
+                var dayQuart = input.value * 8;
+                var dayFace = input.value * (604 / 30);
+
+                var prayerPart = dayPart / 5;
+                var prayerQuart = dayQuart / 5;
+                var prayerFace = input.value * 4;
+
+                document.getElementById("day-part").innerHTML = dayPart;
+                document.getElementById("day-quart").innerHTML = dayQuart;
+                document.getElementById("day-face").innerHTML = Math.ceil(dayFace);
+                document.getElementById("prayer-part").innerHTML = prayerPart.toFixed(1);
+                document.getElementById("prayer-quart").innerHTML = prayerQuart.toFixed(1);
+                document.getElementById("prayer-face").innerHTML = Math.ceil(prayerFace);
+
+                
+
+
+
+
+                
+
+            }
+            
+        </script>
+    </head>
+    <body>
+        <img id="ayah" src="images/ayah.png" alt="قد جاءكم من الله نور وكتاب مبين">
+        <br>
+        <div id="box">
+            <div id="card-head">
+            <div>
+            <input id="number-of-khatmas" type="number" value="1" min="1" max="10" onchange="calc()" name="quntity">
+            </div>
+            
+            <div>
+                   :  عدد الختمات في 30 يوما
+                </div>
+
+            </div>
+            <div id="card-body">
+                <div class="numbers">
+                    <div>
+                       <span id="day-part" class="number">1</span> <br>
+                       <span>أجزاء</span>
+                    </div>
+                    <div>
+                        <span id="day-quart" class="number">8</span> <br>
+                       <span> أرباع</span>
+                    </div>
+                    <div>
+                        <span id="day-face" class="number">21</span> <br>
+                       <span>  أوجه</span>
+
+                    </div>
+
+                </div>
+                <div class="per">
+                    في اليوم
+                </div>
+                <hr>
+                <div class="numbers">
+                    <div>
+                       <span id="prayer-part" class="number">0.2</span> <br>
+                       <span>أجزاء</span>
+                    </div>
+                    <div>
+                        <span id="prayer-quart" class="number">1.6</span> <br>
+                       <span> أرباع</span>
+                    </div>
+                    <div>
+                        <span id="prayer-face" class="number">4</span> <br>
+                       <span>  أوجه</span>
+
+                    </div>
+
+                </div>
+                <div class="per">
+                    بعد كل صلاة
+                </div>
+
+
+
+
+            </div>
+    
+        </div>
+
+        <div>
+            <ul dir="rtl">
+                <li>أقصى عدد متاح للختمات هو عشر ختمات.</li>
+                <li>يجب الانتباه إلى أن الشهر الهجري قد يكون 29 يوما.</li>
+                <li>بعض الأعداد مقربة ومنها عدد الصفحات اليومي. </li>
+                <li>عدد الصفحات بعد كل صلاة مقرب أيضا للتيسير, لذلك قد يوجد فارق صفحة أو صفحتين بين عدد الصفحات اليومية ومجموع عدد الصفحات بعد كل صلاة.</li>
+            </ul>
+        </div>
+
+        <footer>
+            <a href="https://github.com/B-asmala" target="_blank"><img src="images/github.png" alt="my github" class="link" ></a>
+            <a href="https://www.linkedin.com/in/basmala-abdelhakim-714b84222/" target="_blank"><img src="images/linkedin.png" alt="my linkedin" class="link"></a>
+            <a href="https://t.me/basmala01010" target="_blank"><img src="images/telegram.png" alt="my telegram" class="link"></a>
+        </footer>
+    </body>
+    </html>
